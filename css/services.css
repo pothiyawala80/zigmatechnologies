@@ -63,17 +63,16 @@ header .logo h1 {
     background-color: #2a2a2a;
 }
 
-/* Hero Section with Background Image */
-.hero.about-hero {
-    height: 60vh; /* Keep this as is to maintain the section's height */
+/* Hero Section with Zoomed Out Background Image */
+.hero.services-hero {
+    height: 60vh;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    background: url('../image/BackGroundImage_Aboutus_Center.jpg') no-repeat center center;
-    background-size: cover; /* Ensures the image covers the box completely */
-    background-attachment: fixed; /* Optional: Creates a parallax effect */
-    background-position: center; /* Ensures the focus point of the image is centered */
+    background: url('../image/BackGroundImage_Services_Center.jpg') no-repeat center center;
+    background-size: 100%; /* Zooms out the image by scaling it to 150% */
+    color: #ffffff;
 }
 
 
@@ -89,92 +88,88 @@ header .logo h1 {
     text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
 }
 
-/* About Overview */
-.about-overview {
+/* Services Section */
+.services {
     padding: 4rem 2rem;
-    background-color: #1f1f1f;
     text-align: center;
 }
 
-.about-overview h2 {
+.services h2 {
     margin-bottom: 2rem;
     font-size: 1.8rem;
+    color: #00bcd4;
 }
 
-/* Mission, Vision, Values Section */
-.mission-vision {
-    padding: 4rem 2rem;
-    background-color: #2a2a2a;
-}
-
-.mv-grid {
+.services-grid {
     display: flex;
     gap: 2rem;
     flex-wrap: wrap;
     justify-content: center;
 }
 
-.mv-item {
-    background-color: #1f1f1f;
-    padding: 2rem;
+.service-item {
     flex: 1 1 calc(33.333% - 2rem);
     max-width: calc(33.333% - 2rem);
-    text-align: center;
+    padding: 2rem;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+    background-color: transparent;
 }
 
-.mv-item h3 {
+.service-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+}
+
+.service-item h3 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
     color: #00bcd4;
 }
 
-.mv-item p, .mv-item ul {
+.service-item p {
     font-size: 1rem;
     color: #e0e0e0;
 }
 
-/* Team Section */
-.team {
+/* Process Section */
+.process {
     padding: 4rem 2rem;
     background-color: #1f1f1f;
 }
 
-.team h2 {
+.process h2 {
     text-align: center;
     margin-bottom: 2rem;
     font-size: 1.8rem;
+    color: #00bcd4;
 }
 
-.team-grid {
+.process-grid {
     display: flex;
     gap: 2rem;
     flex-wrap: wrap;
     justify-content: center;
 }
 
-.team-member {
+.process-step {
     flex: 1 1 calc(33.333% - 2rem);
     max-width: calc(33.333% - 2rem);
+    background-color: #2a2a2a;
+    padding: 2rem;
     text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-.team-member img {
-    width: 100%;
-    max-width: 150px;
-    height: auto;
-    border-radius: 50%;
+.process-step h3 {
+    font-size: 1.5rem;
     margin-bottom: 1rem;
-}
-
-.team-member h3 {
-    font-size: 1.2rem;
     color: #00bcd4;
-    margin-bottom: 0.5rem;
 }
 
-.team-member p {
+.process-step p {
     font-size: 1rem;
     color: #e0e0e0;
 }
