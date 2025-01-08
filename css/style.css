@@ -31,37 +31,13 @@ header .container {
     align-items: center;
 }
 
-/* Fade-In with Bouncing Effect for Zigma Technologies */
 header .logo h1 {
-    font-size: 3rem; /* Adjusted font size */
-    color: #ffffff; /* White color for text */
+    font-size: 2.5rem;
+    color: #ffffff;
     font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 2px; /* Adjusted letter-spacing */
-    animation: fadeInBounce 2s ease-out forwards;
 }
 
-/* Fade-In + Bouncing Effect */
-@keyframes fadeInBounce {
-    0% {
-        opacity: 0;
-        transform: translateY(-50px);
-    }
-    60% {
-        opacity: 1;
-        transform: translateY(10px);
-    }
-    80% {
-        opacity: 1;
-        transform: translateY(-5px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Navigation Menu */
+/* Navigation */
 .nav-menu {
     display: flex;
     gap: 1rem;
@@ -71,7 +47,7 @@ header .logo h1 {
     color: #ffffff;
     padding: 0.5rem 1rem;
     border-radius: 5px;
-    font-size: 0.9rem; /* Adjusted font size */
+    font-size: 0.9rem;
     transition: background-color 0.3s;
 }
 
@@ -79,243 +55,141 @@ header .logo h1 {
     background-color: #2a2a2a;
 }
 
-/* Hero Section */
+/* Hero Section with Background Image */
 .hero {
-    height: 100vh;
+    height: 60vh;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    background: linear-gradient(135deg, #3a3a3a, #1f1f1f);
-}
-
-/* Hero Content Section with Background Image */
-.hero-content {
-    background-image: url('../image/BackGroundImage_Index_Center.jpg'); /* Corrected image path */
-    background-size: cover; /* Cover the entire section */
-    background-position: center; /* Center the image */
-    padding: 2rem;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+    background: url('../image/BackGroundImage_Index_Center.jpg') no-repeat center center;
+    background-size: cover;
 }
 
 .hero-content h1 {
-    font-size: 2.5rem; /* Adjusted font size */
+    font-size: 2.5rem;
     margin-bottom: 1rem;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
 }
 
 .hero-content p {
-    font-size: 1rem; /* Adjusted font size */
+    font-size: 1.2rem;
     margin-bottom: 1.5rem;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
 }
 
-.btn-primary {
-    display: inline-block;
-    padding: 0.5rem 1rem;
-    background-color: #007BFF;
+.explore-btn {
+    background-color: #00bcd4;
     color: #ffffff;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
     border-radius: 5px;
-    font-size: 0.9rem; /* Adjusted font size */
+    text-transform: uppercase;
     transition: background-color 0.3s;
 }
 
-.btn-primary:hover {
-    background-color: #0056b3;
+.explore-btn:hover {
+    background-color: #0097a7;
 }
 
-/* Services Overview */
-.services-overview {
+/* Our Expertise Section */
+.expertise {
     padding: 4rem 2rem;
     background-color: #1f1f1f;
     text-align: center;
 }
 
-.services-overview h2 {
+.expertise h2 {
+    font-size: 2rem;
     margin-bottom: 2rem;
-    font-size: 1.8rem; /* Adjusted font size */
 }
 
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
+.expertise-grid {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
-.service-item {
+.expertise-item {
     background-color: #2a2a2a;
     padding: 2rem;
+    flex: 1 1 calc(33.333% - 2rem);
+    max-width: calc(33.333% - 2rem);
+    text-align: center;
     border-radius: 8px;
-    transition: transform 0.3s, background-color 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-.service-item:hover {
-    transform: scale(1.05);
-    background-color: #333333;
+.expertise-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #00bcd4;
 }
 
-/* Call to Action Section */
-.cta {
+.expertise-item p {
+    font-size: 1rem;
+    color: #e0e0e0;
+}
+
+/* Ready to Transform Your Business Section */
+.transform {
     padding: 4rem 2rem;
-    background: linear-gradient(135deg, #2a2a2a, #1a1a1a);
+    background-color: #2a2a2a; /* Same background color as expertise section */
     text-align: center;
 }
 
-.cta h2 {
-    margin-bottom: 1.5rem;
-    font-size: 1.8rem; /* Adjusted font size */
-}
-
-.btn-secondary {
-    display: inline-block;
-    padding: 0.5rem 1rem;
-    background-color: #28a745;
+.transform-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
     color: #ffffff;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.contact-btn {
+    background-color: #4CAF50; /* Green button */
+    color: #ffffff;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
     border-radius: 5px;
-    font-size: 0.9rem; /* Adjusted font size */
+    text-transform: uppercase;
     transition: background-color 0.3s;
+    text-decoration: none;
 }
 
-.btn-secondary:hover {
-    background-color: #218838;
+.contact-btn:hover {
+    background-color: #45a049;
 }
 
-/* Footer */
+/* Footer Section */
 footer {
     background-color: #1f1f1f;
     text-align: center;
     padding: 2rem 0;
-    margin-top: 2rem;
 }
 
 footer p {
     margin-bottom: 1rem;
-    font-size: 1rem; /* Adjusted font size */
 }
 
-footer .social-links {
+/* Social Links in Footer */
+.social-links {
     display: flex;
     justify-content: center;
     gap: 1rem;
+    margin-top: 1rem;
 }
 
-footer .social-links a {
+.social-links a {
     color: #ffffff;
-    transition: color 0.3s;
-    font-size: 0.9rem; /* Adjusted font size */
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    background-color: #2a2a2a;
+    transition: background-color 0.3s, transform 0.3s;
 }
 
-footer .social-links a:hover {
-    color: #007BFF;
-}
-
-/* Media Queries for Responsiveness */
-
-/* Small Devices (Mobile) */
-@media screen and (max-width: 768px) {
-    /* Header */
-    header .logo h1 {
-        font-size: 2rem;
-    }
-
-    /* Navigation Menu */
-    .nav-menu {
-        display: flex;
-        flex-direction: column;
-        gap: 0.5rem;
-        text-align: center;
-    }
-
-    .nav-menu a {
-        font-size: 0.8rem;
-        padding: 0.5rem 1rem;
-    }
-
-    /* Hero Section */
-    .hero-content {
-        padding: 1.5rem;
-    }
-
-    .hero-content h1 {
-        font-size: 1.8rem;
-    }
-
-    .hero-content p {
-        font-size: 0.9rem;
-    }
-
-    /* Buttons */
-    .btn-primary, .btn-secondary {
-        width: 100%;
-        font-size: 0.9rem;
-    }
-
-    /* Services Overview */
-    .services-overview h2 {
-        font-size: 1.6rem;
-    }
-
-    /* Call to Action Section */
-    .cta h2 {
-        font-size: 1.6rem;
-    }
-
-    /* Form Elements */
-    .contact-form input, .contact-form textarea {
-        width: 100%;
-        padding: 0.8rem;
-        margin: 0.5rem 0;
-    }
-}
-
-/* Medium Devices (Tablets) */
-@media screen and (max-width: 1024px) {
-    .nav-menu a {
-        font-size: 0.85rem;
-    }
-
-    .hero-content h1 {
-        font-size: 2.2rem;
-    }
-
-    .hero-content p {
-        font-size: 1rem;
-    }
-
-    /* Services Overview */
-    .services-overview h2 {
-        font-size: 1.7rem;
-    }
-
-    .cta h2 {
-        font-size: 1.7rem;
-    }
-}
-
-/* Large Devices (Desktop) */
-@media screen and (min-width: 1025px) {
-    header .logo h1 {
-        font-size: 3rem;
-    }
-
-    /* Navigation Menu */
-    .nav-menu a {
-        font-size: 0.9rem;
-    }
-
-    .hero-content h1 {
-        font-size: 2.5rem;
-    }
-
-    .hero-content p {
-        font-size: 1rem;
-    }
-
-    .btn-primary, .btn-secondary {
-        font-size: 1rem;
-    }
+.social-links a:hover {
+    background-color: #00bcd4;
+    transform: scale(1.1);
 }
