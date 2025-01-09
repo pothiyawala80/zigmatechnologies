@@ -132,6 +132,14 @@ header .logo h1 {
     outline: none;
 }
 
+/* Placeholder Styling */
+.contact-form input::placeholder, 
+.contact-form textarea::placeholder {
+    color: #bdbdbd;
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+}
+
 .contact-form input:focus, 
 .contact-form textarea:focus {
     background-color: #2a2a2a;
