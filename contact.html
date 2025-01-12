@@ -40,7 +40,7 @@
     <section class="contact-form-section">
         <div class="container">
             <h2>Contact Form</h2>
-            <form action="https://formspree.io/f/xrbbrzee" method="POST" class="contact-form">
+            <form id="contactForm" action="https://formspree.io/f/xrbbrzee" method="POST" class="contact-form">
                 <div class="form-group">
                     <label for="name">Your Name</label>
                     <input type="text" id="name" name="name" placeholder="Enter your name" required>
@@ -58,6 +58,19 @@
         </div>
     </section>
 
+    <!-- Contact Details Section -->
+    <section class="contact-details-section">
+        <div class="container">
+            <h2>Contact Details</h2>
+            <p>If you prefer to reach out directly, here are our contact details:</p>
+            <ul class="contact-info">
+                <li><strong>Phone:</strong> +91 9834215925</li>
+                <li><strong>Email:</strong> pothiyawala80@gmail.com</li>
+                <li><strong>Office Address:</strong> 1234 Innovation Drive, Tech City, NY 10001</li>
+            </ul>
+        </div>
+    </section>
+
     <!-- Footer Section -->
     <footer>
         <div class="container">
@@ -70,5 +83,19 @@
             </ul>
         </div>
     </footer>
+
+    <!-- JavaScript to Reset Form -->
+    <script>
+        window.addEventListener('pageshow', function(event) {
+            if (event.persisted || window.performance.getEntriesByType("navigation")[0].type === "back_forward") {
+                document.getElementById('contactForm').reset(); // Reset the form
+            }
+        });
+
+        // Additional reset on load to handle edge cases
+        window.onload = function() {
+            document.getElementById('contactForm').reset();
+        };
+    </script>
 </body>
 </html>
