@@ -31,6 +31,13 @@ header .container {
     align-items: center;
 }
 
+header .logo img {
+    height: 100%;
+    max-height: 80px;
+    width: auto;
+    display: block;
+}
+
 header .logo h1 {
     font-size: 2.5rem;
     color: #ffffff;
@@ -210,7 +217,7 @@ footer p {
 footer .social-links {
     display: flex;
     justify-content: center;
-    gap: 1rem;
+    gap: 1.5rem;  /* Increased gap for better spacing */
     margin-top: 1rem;
 }
 
@@ -227,4 +234,142 @@ footer .social-links a:hover {
     background-color: #00bcd4;
     color: #121212;
     transform: scale(1.1) rotate(-3deg);
+}
+
+/* Responsiveness */
+
+/* For screens smaller than 768px (Mobile) */
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-menu {
+        flex-wrap: wrap;
+        justify-content: center;  /* Centered for smaller screens */
+    }
+
+    .hero.contact-hero {
+        height: 40vh;
+    }
+
+    .contact-form {
+        padding: 1.5rem;
+    }
+
+    .contact-details-section {
+        padding: 2rem 1rem;
+    }
+
+    .contact-details-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .contact-details-section p {
+        font-size: 1rem;
+    }
+
+    .contact-info li {
+        font-size: 1rem;
+    }
+
+    footer .social-links {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        justify-content: center;
+    }
+
+    footer .social-links a {
+        font-size: 1rem;
+        padding: 0.4rem 0.8rem;
+    }
+}
+
+/* For screens between 768px and 1024px (Tablets) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    header .logo h1 {
+        font-size: 2.2rem;
+    }
+
+    footer .social-links {
+        gap: 1rem;
+    }
+
+    footer .social-links a {
+        font-size: 1.1rem;
+        padding: 0.5rem 1rem;
+    }
+
+    .nav-menu {
+        gap: 0.5rem;
+    }
+
+    .hero.contact-hero {
+        height: 50vh;
+    }
+
+    .contact-form {
+        padding: 1.8rem;
+    }
+
+    .contact-details-section {
+        padding: 2rem 2rem;
+    }
+
+    .contact-details-section h2 {
+        font-size: 1.8rem;
+    }
+
+    .contact-details-section p {
+        font-size: 1.1rem;
+    }
+}
+
+/* For screens larger than 1024px (Desktop and large tablets) */
+@media (min-width: 1024px) {
+    header .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    footer .social-links {
+        gap: 1.5rem;
+    }
+
+    footer .social-links a {
+        font-size: 1.2rem;
+        padding: 0.5rem 1rem;
+    }
+
+    .nav-menu {
+        display: flex;
+        gap: 1.5rem;  /* Consistent gap for larger screens */
+    }
+
+    .hero.contact-hero {
+        height: 60vh;
+    }
+
+    .contact-form {
+        padding: 2rem;
+        max-width: 600px;
+    }
+
+    .contact-details-section {
+        padding: 3rem 2rem;
+    }
+
+    .contact-details-section h2 {
+        font-size: 2rem;
+    }
+
+    .contact-details-section p {
+        font-size: 1.2rem;
+    }
+
+    .contact-info li {
+        font-size: 1.1rem;
+    }
 }

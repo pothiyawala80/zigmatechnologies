@@ -31,6 +31,13 @@ header .container {
     align-items: center;
 }
 
+header .logo img {
+    height: 100%;
+    max-height: 80px;
+    width: auto;
+    display: block;
+}
+
 header .logo h1 {
     font-size: 2.5rem;
     color: #ffffff;
@@ -164,4 +171,108 @@ footer .social-links a {
 footer .social-links a:hover {
     background-color: #00bcd4;
     transform: scale(1.1);
+}
+
+/* Existing CSS retained as is */
+
+/* Add responsive styles below */
+
+/* Mobile and small devices (up to 768px) */
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nav-menu {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero.industry-hero {
+        height: auto;
+        padding: 2rem 1rem;
+    }
+
+    .hero-content h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .industry-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .industry-item {
+        max-width: 100%;
+    }
+
+    /* Social Links Adjustments */
+    footer .social-links {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        justify-content: center;
+    }
+
+    footer .social-links a {
+        font-size: 1rem;
+        padding: 0.4rem 0.8rem;
+    }
+}
+
+/* Tablets and medium devices (768px to 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .nav-menu {
+        gap: 0.5rem;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-content p {
+        font-size: 1.1rem;
+    }
+
+    .industry-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+
+    .industry-item {
+        max-width: 100%;
+    }
+
+    /* Social Links Adjustments */
+    footer .social-links {
+        gap: 1rem;
+    }
+
+    footer .social-links a {
+        font-size: 1.1rem;
+        padding: 0.5rem 1rem;
+    }
+}
+
+/* Large screens (1024px and above) */
+@media (min-width: 1024px) {
+    .industry-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    /* Social Links Adjustments */
+    footer .social-links {
+        gap: 1.5rem;
+    }
+
+    footer .social-links a {
+        font-size: 1.2rem;
+        padding: 0.5rem 1rem;
+    }
 }

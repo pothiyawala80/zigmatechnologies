@@ -13,13 +13,14 @@ body {
     background-color: #121212;
     color: #ffffff;
     line-height: 1.6;
-    margin: 0;
 }
 
 /* Header */
 header {
-    background-color: #1f1f1f;
-    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centers the content within the header */
+    padding: 0 2rem;
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -27,28 +28,23 @@ header {
 
 header .container {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    align-items: center; /* Aligns logo and navigation vertically */
+    justify-content: space-between; /* Spreads logo and menu apart */
+    width: 100%;
+    height: 100%; /* Ensures it fills the header height */
 }
 
-header .logo h1 {
-    font-size: 2.5rem;
-    color: #ffffff;
-    font-weight: bold;
-    animation: fadeInBounce 2s ease-out forwards;
+header .logo img {
+    height: 100%;
+    max-height: 80px;
+    width: auto;
 }
 
-@keyframes fadeInBounce {
-    0% { opacity: 0; transform: translateY(-50px); }
-    60% { opacity: 1; transform: translateY(10px); }
-    80% { transform: translateY(-5px); }
-    100% { transform: translateY(0); }
-}
-
-/* Navigation */
 .nav-menu {
     display: flex;
+    align-items: center; /* Vertically aligns menu items */
     gap: 1rem;
+    margin: 0; /* Removes any default margins */
 }
 
 .nav-menu a {
@@ -56,14 +52,17 @@ header .logo h1 {
     padding: 0.5rem 1rem;
     border-radius: 5px;
     font-size: 0.9rem;
+    text-align: center; /* Ensures text inside the links is centered */
     transition: background-color 0.3s;
+    display: block; /* Makes each menu item a block-level element for consistent spacing */
 }
 
-.nav-menu a:hover, .nav-menu a.active {
-    background-color: #2a2a2a;
+.nav-menu a:hover,
+.nav-menu a.active {
+    background-color: #2a2a2a; /* Highlight on hover */
 }
 
-/* Hero Section with Background Image */
+/* Hero Section */
 .hero.about-hero {
     height: 60vh;
     display: flex;
@@ -72,8 +71,7 @@ header .logo h1 {
     text-align: center;
     background: url('../image/BackGroundImage_Aboutus_Center.jpg') no-repeat center center;
     background-size: cover;
-    background-attachment: fixed;
-    background-position: center;
+    color: #ffffff;
 }
 
 .hero-content h1 {
@@ -84,72 +82,70 @@ header .logo h1 {
 
 .hero-content p {
     font-size: 1.2rem;
-    margin-bottom: 1.5rem;
     text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
 }
 
-/* About Overview */
+/* About Overview Section (Who We Are) */
 .about-overview {
     padding: 4rem 2rem;
-    background-color: #1f1f1f;
+    background-color: #1a1a1a;
     text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 2rem;
 }
 
 .about-overview h2 {
-    margin-bottom: 2rem;
-    font-size: 2rem;
-    color: #ffffff;
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+    color: #00bcd4;
+    text-transform: uppercase;
+}
+
+.about-overview p {
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* Mission, Vision, Values Section */
 .mission-vision {
     padding: 4rem 2rem;
-    background-color: #2a2a2a;
+    background-color: #121212;
 }
 
-.mv-grid {
+.mission-vision .mv-grid {
     display: flex;
     gap: 2rem;
     flex-wrap: wrap;
     justify-content: center;
 }
 
-.mv-item {
+.mission-vision .mv-item {
+    flex: 1 1 calc(33.333% - 2rem);
     background-color: #1f1f1f;
     padding: 2rem;
-    flex: 1 1 calc(33.333% - 2rem);
-    max-width: calc(33.333% - 2rem);
+    border-radius: 10px;
     text-align: center;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-.mv-item h3 {
+.mission-vision .mv-item h3 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
     color: #00bcd4;
 }
 
-.mv-item p, .mv-item ul {
-    font-size: 1rem;
-    color: #e0e0e0;
-}
-
-/* Team Section */
+/* Meet Our Team Section */
 .team {
     padding: 4rem 2rem;
-    background-color: #1f1f1f;
+    background-color: #1a1a1a;
+    text-align: center;
 }
 
 .team h2 {
-    text-align: center;
-    margin-bottom: 2rem;
-    font-size: 1.8rem;
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+    color: #00bcd4;
 }
 
 .team-grid {
@@ -161,75 +157,47 @@ header .logo h1 {
 
 .team-member {
     flex: 1 1 calc(33.333% - 2rem);
-    max-width: calc(33.333% - 2rem);
     text-align: center;
+    background-color: #1f1f1f;
+    padding: 2rem;
+    border-radius: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.team-member:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
 }
 
 .team-member img {
-    width: 100%;
-    max-width: 150px;
-    height: auto;
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
     margin-bottom: 1rem;
 }
 
 .team-member h3 {
     font-size: 1.2rem;
-    color: #00bcd4;
     margin-bottom: 0.5rem;
+    color: #00bcd4;
 }
 
 .team-member p {
     font-size: 1rem;
-    color: #e0e0e0;
+    color: #dcdcdc;
 }
 
-/* Contact Us Button */
-.contact-btn-container {
-    display: flex;
-    justify-content: center;
-    margin-top: 2rem;
-}
-
-.contact-btn {
-    padding: 0.75rem 2rem;
-    background-color: #00bcd4;
-    color: #ffffff;
-    font-size: 1rem;
-    text-transform: uppercase;
-    border-radius: 5px;
-    text-align: center;
-    text-decoration: none;
-    transition: background-color 0.3s, transform 0.3s;
-    max-width: 300px;
-    width: 100%;
-}
-
-.contact-btn:hover {
-    background-color: #02a4b3;
-    transform: scale(1.05);
-}
-
-/* Footer */
-footer {
-    background-color: #1f1f1f;
-    text-align: center;
-    padding: 2rem 0;
-}
-
-footer p {
-    margin-bottom: 1rem;
-}
-
+/* Social Links */
 /* Social Links in Footer */
-footer .social-links {
+.social-links {
     display: flex;
     justify-content: center;
     gap: 1rem;
     margin-top: 1rem;
+    flex-wrap: wrap;
 }
 
-footer .social-links a {
+.social-links a {
     color: #ffffff;
     font-size: 1.2rem;
     padding: 0.5rem 1rem;
@@ -238,144 +206,23 @@ footer .social-links a {
     transition: background-color 0.3s, transform 0.3s;
 }
 
-footer .social-links a:hover {
+.social-links a:hover {
     background-color: #00bcd4;
     transform: scale(1.1);
 }
 
-/* Responsive Adjustments */
-
-/* Adjustments for larger screens and landscape mode */
-@media (orientation: landscape) {
-    .mv-grid {
-        flex-direction: row;
-        gap: 3rem;
-    }
-
-    .mv-item {
-        flex: 1 1 calc(33.333% - 3rem);
-    }
-
-    .team-grid {
-        gap: 3rem;
-    }
-
-    .team-member {
-        flex: 1 1 calc(33.333% - 3rem);
-    }
-
-    .contact-btn {
-        width: auto;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .about-overview h2, .team h2 {
-        font-size: 2rem;
-    }
+/* Footer */
+footer {
+    background-color: #1f1f1f;
+    padding: 1rem;
+    text-align: center;
+    color: #dcdcdc;
 }
 
-/* Adjustments for Tablet and Smaller Desktop Screens */
-@media (max-width: 1024px) {
-    header {
-        padding: 0.8rem 1.5rem;
-    }
-
-    header .logo h1 {
-        font-size: 2rem;
-    }
-
-    .nav-menu a {
-        font-size: 0.9rem;
-    }
-
-    .mv-item {
-        flex: 1 1 calc(50% - 1rem);
-    }
-
-    .team-member {
-        flex: 1 1 calc(50% - 1rem);
-    }
-
-    .contact-btn {
-        width: auto;
-        margin-left: auto;
-        margin-right: auto;
-    }
+footer p {
+    margin-bottom: 0.5rem;
 }
 
-/* Mobile Adjustments */
-@media (max-width: 768px) {
-    header {
-        padding: 0.6rem 1rem;
-    }
-
-    header .logo h1 {
-        font-size: 1.5rem;
-    }
-
-    .nav-menu {
-        flex-direction: column;
-        gap: 0.5rem;
-    }
-
-    .nav-menu a {
-        font-size: 0.8rem;
-        padding: 0.4rem 0.8rem;
-    }
-
-    .mv-grid {
-        flex-direction: column;
-        align-items: center; /* Centers the items in the grid */
-    }
-
-    .mv-item {
-        flex: 1 1 100%; /* Makes the items take full width on mobile */
-        max-width: 100%; /* Ensures they don't exceed the available width */
-        text-align: center; /* Centers the text inside each item */
-    }
-
-    .team-grid {
-        flex-direction: column;
-    }
-
-    .team-member {
-        flex: 1 1 calc(100% - 2rem);
-    }
-
-    .about-overview h2, .team h2 {
-        font-size: 1.6rem;
-    }
-
-    .contact-btn {
-        width: 90%;
-        margin-left: auto;
-        margin-right: auto;
-    }
-}
-
-/* Adjustments for Very Small Devices */
-@media (max-width: 480px) {
-    header {
-        padding: 0.4rem 0.8rem;
-    }
-
-    header .logo h1 {
-        font-size: 1.2rem;
-    }
-
-    .nav-menu a {
-        font-size: 0.7rem;
-        padding: 0.3rem 0.6rem;
-    }
-
-    .about-overview h2, .team h2 {
-        font-size: 1.4rem;
-    }
-
-    .contact-btn {
-        width: 90%;
-        margin-left: auto;
-        margin-right: auto;
-    }
+footer .social-links {
+    margin: 0;
 }

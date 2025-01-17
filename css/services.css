@@ -13,13 +13,16 @@ body {
     background-color: #121212;
     color: #ffffff;
     line-height: 1.6;
-    margin: 0;
 }
 
 /* Header */
 header {
     background-color: #1f1f1f;
-    padding: 1rem 2rem;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -28,27 +31,20 @@ header {
 
 header .container {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
 }
 
-header .logo h1 {
-    font-size: 2.5rem; /* Default size for large screens */
-    color: #ffffff;
-    font-weight: bold;
-    animation: fadeInBounce 2s ease-out forwards;
-    text-transform: uppercase;
-    margin: 0;
+header .logo img {
+    height: 100%;
+    max-height: 80px;
+    width: auto;
+    display: block;
 }
 
-@keyframes fadeInBounce {
-    0% { opacity: 0; transform: translateY(-50px); }
-    60% { opacity: 1; transform: translateY(10px); }
-    80% { transform: translateY(-5px); }
-    100% { transform: translateY(0); }
-}
-
-/* Navigation */
+/* Navigation Menu */
 .nav-menu {
     display: flex;
     gap: 1rem;
@@ -58,7 +54,7 @@ header .logo h1 {
     color: #ffffff;
     padding: 0.5rem 1rem;
     border-radius: 5px;
-    font-size: 1rem;
+    font-size: 0.9rem;
     transition: background-color 0.3s;
 }
 
@@ -67,15 +63,14 @@ header .logo h1 {
 }
 
 /* Hero Section */
-.hero.services-hero {
+.hero {
     height: 60vh;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    background: url('../image/BackGroundImage_Services_Center.jpg') no-repeat center center;
-    background-size: 100%;
-    color: #ffffff;
+    background: url('../image/BackGroundImage_Index_Center.jpg') no-repeat center center;
+    background-size: cover;
 }
 
 .hero-content h1 {
@@ -90,55 +85,57 @@ header .logo h1 {
     text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
 }
 
-/* Services Section */
-.services {
+/* Our Expertise Section */
+.expertise {
     padding: 4rem 2rem;
+    background-color: #1f1f1f;
     text-align: center;
 }
 
-.services h2 {
+.expertise h2 {
+    font-size: 2rem;
     margin-bottom: 2rem;
-    font-size: 1.8rem;
     color: #00bcd4;
 }
 
-.services-grid {
+.expertise-grid {
     display: flex;
     gap: 2rem;
-    flex-wrap: wrap;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
-.service-item {
+.expertise-item {
+    background-color: #2a2a2a;
+    padding: 2rem;
     flex: 1 1 calc(33.333% - 2rem);
     max-width: calc(33.333% - 2rem);
-    padding: 2rem;
+    text-align: center;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s, box-shadow 0.3s;
-    background-color: transparent;
 }
 
-.service-item:hover {
+.expertise-item:hover {
     transform: translateY(-10px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
 }
 
-.service-item h3 {
+.expertise-item h3 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
     color: #00bcd4;
 }
 
-.service-item p {
+.expertise-item p {
     font-size: 1rem;
     color: #e0e0e0;
 }
 
-/* Process Section */
+/* Our Process Section */
 .process {
     padding: 4rem 2rem;
-    background-color: #1f1f1f;
+    background-color: #2a2a2a;
 }
 
 .process h2 {
@@ -158,7 +155,7 @@ header .logo h1 {
 .process-step {
     flex: 1 1 calc(33.333% - 2rem);
     max-width: calc(33.333% - 2rem);
-    background-color: #2a2a2a;
+    background-color: #1f1f1f;
     padding: 2rem;
     text-align: center;
     border-radius: 8px;
@@ -176,7 +173,7 @@ header .logo h1 {
     color: #e0e0e0;
 }
 
-/* Footer */
+/* Footer Section */
 footer {
     background-color: #1f1f1f;
     text-align: center;
@@ -188,14 +185,15 @@ footer p {
 }
 
 /* Social Links in Footer */
-footer .social-links {
+.social-links {
     display: flex;
     justify-content: center;
     gap: 1rem;
     margin-top: 1rem;
+    flex-wrap: wrap;
 }
 
-footer .social-links a {
+.social-links a {
     color: #ffffff;
     font-size: 1.2rem;
     padding: 0.5rem 1rem;
@@ -204,61 +202,30 @@ footer .social-links a {
     transition: background-color 0.3s, transform 0.3s;
 }
 
-footer .social-links a:hover {
+.social-links a:hover {
     background-color: #00bcd4;
     transform: scale(1.1);
 }
 
 /* Responsive Adjustments */
 @media (max-width: 1024px) {
-    header {
-        padding: 0.8rem 1.5rem;
-    }
-
-    header .logo h1 {
-        font-size: 2rem; /* Slightly smaller logo */
-    }
-
-    .nav-menu a {
-        font-size: 0.9rem; /* Slightly smaller links */
+    .expertise-item, .process-step {
+        flex: 1 1 calc(50% - 2rem);
     }
 }
 
 @media (max-width: 768px) {
-    header {
-        padding: 0.6rem 1rem; /* Compact padding */
+    .expertise-item, .process-step {
+        flex: 1 1 100%;
     }
 
-    header .logo h1 {
-        font-size: 1.5rem; /* Smaller font size for the logo */
-    }
-
-    .nav-menu {
-        flex-direction: column; /* Stack navigation vertically */
-        gap: 0.5rem;
-    }
-
-    .nav-menu a {
-        font-size: 0.8rem; /* Reduced font size for smaller screens */
-        padding: 0.4rem 0.8rem; /* Adjusted padding */
+    .hero-content h1 {
+        font-size: 2rem;
     }
 }
 
 @media (max-width: 480px) {
-    header {
-        padding: 0.4rem 0.8rem; /* Minimal padding for very small devices */
-    }
-
-    header .logo h1 {
-        font-size: 1.2rem; /* Smaller logo size */
-    }
-
-    .nav-menu {
-        gap: 0.3rem;
-    }
-
-    .nav-menu a {
-        font-size: 0.7rem;
-        padding: 0.3rem 0.6rem;
+    .hero-content h1 {
+        font-size: 1.6rem;
     }
 }
