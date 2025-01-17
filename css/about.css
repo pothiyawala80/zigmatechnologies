@@ -171,9 +171,10 @@ header .logo img {
 
 .team-member img {
     width: 100px;
-    height: 100px;
-    border-radius: 50%;
+    height: 130px;
+    border-radius: 0; /* Removed rounding for square shape */
     margin-bottom: 1rem;
+    object-fit: cover; /* Ensures the image scales properly without distortion */
 }
 
 .team-member h3 {
