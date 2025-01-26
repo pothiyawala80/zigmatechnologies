@@ -1,0 +1,233 @@
+/* General Reset */
+body, h1, h2, h3, p, ul, li, a {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+/* Body Style */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: #ffffff;
+    line-height: 1.6;
+	margin-top: 80px; /* Pushes the content down to avoid overlap */
+}
+
+/* Header */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed; /* Makes the header stay fixed at the top */
+    top: 0;
+    width: 100%; /* Ensures it spans the full width */
+    background-color: #121212; /* Black background */
+    z-index: 1000; /* Keeps it above other elements */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Optional shadow for separation */
+}
+
+header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px; /* Limits the width for better layout */
+    padding: 1rem 2rem; /* Adds padding for spacing */
+}
+
+header .logo img {
+    height: 100%;
+    max-height: 80px;
+    width: auto;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center; /* Vertically aligns menu items */
+    gap: 1rem;
+    margin: 0; /* Removes any default margins */
+}
+
+.nav-menu a {
+    color: #ffffff;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    text-align: center; /* Ensures text inside the links is centered */
+    transition: background-color 0.3s;
+    display: block; /* Makes each menu item a block-level element for consistent spacing */
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+    background-color: #2a2a2a; /* Highlight on hover */
+}
+
+/* Hero Section */
+.hero.about-hero {
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: url('../image/BackGroundImage_Aboutus_Center.jpg') no-repeat center center;
+    background-size: cover;
+    color: #ffffff;
+}
+
+.hero-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+/* About Overview Section (Who We Are) */
+.about-overview {
+    padding: 4rem 2rem;
+    background-color: #1a1a1a;
+    text-align: center;
+}
+
+.about-overview h2 {
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+    color: #00bcd4;
+    text-transform: uppercase;
+}
+
+.about-overview p {
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Mission, Vision, Values Section */
+.mission-vision {
+    padding: 4rem 2rem;
+    background-color: #121212;
+}
+
+.mission-vision .mv-grid {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.mission-vision .mv-item {
+    flex: 1 1 calc(33.333% - 2rem);
+    background-color: #1f1f1f;
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.mission-vision .mv-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #00bcd4;
+}
+
+/* Meet Our Team Section */
+.team {
+    padding: 4rem 2rem;
+    background-color: #1a1a1a;
+    text-align: center;
+}
+
+.team h2 {
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+    color: #00bcd4;
+}
+
+.team-grid {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.team-member {
+    flex: 1 1 calc(33.333% - 2rem);
+    text-align: center;
+    background-color: #1f1f1f;
+    padding: 2rem;
+    border-radius: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.team-member:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+}
+
+.team-member img {
+    width: 100px;
+    height: 130px;
+    border-radius: 0; /* Removed rounding for square shape */
+    margin-bottom: 1rem;
+    object-fit: cover; /* Ensures the image scales properly without distortion */
+}
+
+.team-member h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: #00bcd4;
+}
+
+.team-member p {
+    font-size: 1rem;
+    color: #dcdcdc;
+}
+
+/* Social Links */
+/* Social Links in Footer */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+}
+
+.social-links a {
+    color: #ffffff;
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    background-color: #2a2a2a;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.social-links a:hover {
+    background-color: #00bcd4;
+    transform: scale(1.1);
+}
+
+/* Footer */
+footer {
+    background-color: #1f1f1f;
+    padding: 1rem;
+    text-align: center;
+    color: #dcdcdc;
+}
+
+footer p {
+    margin-bottom: 0.5rem;
+}
+
+footer .social-links {
+    margin: 0;
+}
