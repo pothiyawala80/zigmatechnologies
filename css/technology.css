@@ -1,5 +1,5 @@
 /* General Reset */
-body, h1, h2, h3, p, ul, li, a {
+body, h1, h2, h3, p, ul, li, a, button {
     margin: 0;
     padding: 0;
     text-decoration: none;
@@ -38,6 +38,21 @@ header .logo img {
     display: block;
 }
 
+header .logo h1 {
+    font-size: 2.5rem;
+    color: #ffffff;
+    font-weight: bold;
+    animation: fadeInBounce 2s ease-out forwards;
+}
+
+@keyframes fadeInBounce {
+    0% { opacity: 0; transform: translateY(-50px); }
+    60% { opacity: 1; transform: translateY(10px); }
+    80% { transform: translateY(-5px); }
+    100% { transform: translateY(0); }
+}
+
+/* Navigation */
 .nav-menu {
     display: flex;
     gap: 1rem;
@@ -64,7 +79,7 @@ header .logo img {
     text-align: center;
     background: url('../image/BackGroundImage_Technology_Center.jpg') no-repeat center center;
     background-size: cover;
-    background-color: #1f1f1f;
+    color: #ffffff;
 }
 
 .hero-content h1 {
@@ -87,7 +102,7 @@ header .logo img {
 
 .technology-expertise h2 {
     margin-bottom: 2rem;
-    font-size: 2rem;
+    font-size: 1.8rem;
     color: #00bcd4;
 }
 
@@ -124,16 +139,18 @@ header .logo img {
     color: #e0e0e0;
 }
 
-/* Language Icons */
 .language-icons {
     display: flex;
     justify-content: center;
-    gap: 2rem;
+    gap: 1rem;
+    flex-wrap: wrap;
     margin-top: 1rem;
 }
 
 .language-icons .icon {
     text-align: center;
+    flex: 1 1 calc(25% - 1rem);
+    max-width: calc(25% - 1rem);
 }
 
 .language-icons img {
@@ -153,7 +170,7 @@ header .logo img {
 }
 
 .language-icons .icon p {
-    font-size: 0.9rem;
+    font-size: 1rem;
     color: #ffffff;
 }
 
@@ -166,6 +183,28 @@ footer {
 
 footer p {
     margin-bottom: 1rem;
+}
+
+footer .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+footer .social-links a {
+    color: #ffffff;
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    background-color: #2a2a2a;
+    transition: background-color 0.3s, transform 0.3s, color 0.3s;
+}
+
+footer .social-links a:hover {
+    background-color: #00bcd4;
+    color: #121212;
+    transform: scale(1.1) rotate(-3deg);
 }
 
 /* Mobile and small devices (up to 768px) */
@@ -202,6 +241,18 @@ footer p {
     .technology-item {
         max-width: 100%;
     }
+
+    /* Social Links Adjustments */
+    footer .social-links {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        justify-content: center;
+    }
+
+    footer .social-links a {
+        font-size: 1rem;
+        padding: 0.4rem 0.8rem;
+    }
 }
 
 /* Tablets and medium devices (768px to 1024px) */
@@ -227,11 +278,31 @@ footer p {
     .technology-item {
         max-width: 100%;
     }
+
+    /* Social Links Adjustments */
+    footer .social-links {
+        gap: 1rem;
+    }
+
+    footer .social-links a {
+        font-size: 1.1rem;
+        padding: 0.5rem 1rem;
+    }
 }
 
 /* Large screens (1024px and above) */
 @media (min-width: 1024px) {
     .technology-grid {
         grid-template-columns: repeat(3, 1fr);
+    }
+
+    /* Social Links Adjustments */
+    footer .social-links {
+        gap: 1.5rem;
+    }
+
+    footer .social-links a {
+        font-size: 1.2rem;
+        padding: 0.5rem 1rem;
     }
 }

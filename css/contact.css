@@ -29,6 +29,8 @@ header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 header .logo img {
@@ -38,21 +40,6 @@ header .logo img {
     display: block;
 }
 
-header .logo h1 {
-    font-size: 2.5rem;
-    color: #ffffff;
-    font-weight: bold;
-    animation: fadeInBounce 2s ease-out forwards;
-}
-
-@keyframes fadeInBounce {
-    0% { opacity: 0; transform: translateY(-50px); }
-    60% { opacity: 1; transform: translateY(10px); }
-    80% { transform: translateY(-5px); }
-    100% { transform: translateY(0); }
-}
-
-/* Navigation */
 .nav-menu {
     display: flex;
     gap: 1rem;
@@ -78,7 +65,7 @@ header .logo h1 {
     justify-content: center;
     text-align: center;
     background: url('../image/BackGroundImage_Contact_Center.jpg') no-repeat center center;
-    background-size: 100%;
+    background-size: cover;
     color: #ffffff;
 }
 
@@ -92,81 +79,6 @@ header .logo h1 {
     font-size: 1.2rem;
     margin-bottom: 1.5rem;
     text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
-}
-
-/* Contact Form Section */
-.contact-form-section {
-    padding: 4rem 2rem;
-    text-align: center;
-    background-color: #1f1f1f;
-}
-
-.contact-form-section h2 {
-    margin-bottom: 2rem;
-    font-size: 1.8rem;
-    color: #00bcd4;
-}
-
-.contact-form {
-    max-width: 600px;
-    margin: 0 auto;
-    background-color: #2a2a2a;
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-}
-
-.contact-form .form-group {
-    margin-bottom: 1.5rem;
-}
-
-.contact-form label {
-    display: block;
-    font-size: 1rem;
-    margin-bottom: 0.5rem;
-    color: #ffffff;
-}
-
-.contact-form input, 
-.contact-form textarea {
-    width: 100%;
-    padding: 0.8rem;
-    border: none;
-    border-radius: 5px;
-    background-color: #1f1f1f;
-    color: #ffffff;
-    font-size: 1rem;
-    outline: none;
-}
-
-/* Placeholder Styling */
-.contact-form input::placeholder, 
-.contact-form textarea::placeholder {
-    color: #bdbdbd;
-    font-family: Arial, sans-serif;
-    font-size: 1rem;
-}
-
-.contact-form input:focus, 
-.contact-form textarea:focus {
-    background-color: #2a2a2a;
-    box-shadow: 0 0 8px rgba(0, 188, 212, 0.5);
-}
-
-.contact-form button {
-    display: inline-block;
-    padding: 0.8rem 2rem;
-    background-color: #00bcd4;
-    color: #121212;
-    border: none;
-    border-radius: 5px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.contact-form button:hover {
-    background-color: #019cae;
 }
 
 /* Contact Details Section */
@@ -188,19 +100,52 @@ header .logo h1 {
     margin-bottom: 2rem;
 }
 
-.contact-info {
-    list-style: none;
-    padding: 0;
-    font-size: 1.1rem;
+/* Contact Boxes Styling */
+.contact-boxes {
+    display: flex;
+    justify-content: center; /* Center align the boxes */
+    gap: 2rem; /* Add space between the boxes */
+    margin-top: 2rem;
+}
+
+.contact-box {
+    background-color: #1f1f1f;
     color: #ffffff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    max-width: 400px; /* Ensures consistent box size */
+    width: 100%;
+    text-align: left;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.contact-info li {
-    margin: 1rem 0;
+.contact-box h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #00bcd4;
 }
 
-.contact-info li strong {
-    font-weight: bold;
+.contact-box p {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.contact-box a {
+    display: inline-block;
+    font-size: 1rem;
+    color: #00bcd4;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.contact-box a:hover {
+    color: #019cae;
+}
+
+.contact-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 188, 212, 0.5);
 }
 
 /* Footer */
@@ -217,7 +162,7 @@ footer p {
 footer .social-links {
     display: flex;
     justify-content: center;
-    gap: 1.5rem;  /* Increased gap for better spacing */
+    gap: 1.5rem;
     margin-top: 1rem;
 }
 
@@ -237,84 +182,20 @@ footer .social-links a:hover {
 }
 
 /* Responsiveness */
-
-/* For screens smaller than 768px (Mobile) */
 @media (max-width: 768px) {
-    header .container {
-        flex-direction: column;
-        align-items: flex-start;
+    .contact-boxes {
+        flex-direction: column; /* Stack boxes vertically */
+        align-items: center; /* Center align vertically stacked boxes */
     }
 
-    .nav-menu {
-        flex-wrap: wrap;
-        justify-content: center;  /* Centered for smaller screens */
-    }
-
-    .hero.contact-hero {
-        height: 40vh;
-    }
-
-    .contact-form {
-        padding: 1.5rem;
-    }
-
-    .contact-details-section {
-        padding: 2rem 1rem;
-    }
-
-    .contact-details-section h2 {
-        font-size: 1.5rem;
-    }
-
-    .contact-details-section p {
-        font-size: 1rem;
-    }
-
-    .contact-info li {
-        font-size: 1rem;
-    }
-
-    footer .social-links {
-        flex-wrap: wrap;
-        gap: 0.5rem;
-        justify-content: center;
-    }
-
-    footer .social-links a {
-        font-size: 1rem;
-        padding: 0.4rem 0.8rem;
+    .contact-box {
+        max-width: 100%;
     }
 }
 
-/* For screens between 768px and 1024px (Tablets) */
 @media (min-width: 768px) and (max-width: 1024px) {
-    header .logo h1 {
-        font-size: 2.2rem;
-    }
-
-    footer .social-links {
-        gap: 1rem;
-    }
-
-    footer .social-links a {
-        font-size: 1.1rem;
-        padding: 0.5rem 1rem;
-    }
-
-    .nav-menu {
-        gap: 0.5rem;
-    }
-
-    .hero.contact-hero {
-        height: 50vh;
-    }
-
-    .contact-form {
-        padding: 1.8rem;
-    }
-
     .contact-details-section {
-        padding: 2rem 2rem;
+        padding: 2rem 1rem;
     }
 
     .contact-details-section h2 {
@@ -322,54 +203,6 @@ footer .social-links a:hover {
     }
 
     .contact-details-section p {
-        font-size: 1.1rem;
-    }
-}
-
-/* For screens larger than 1024px (Desktop and large tablets) */
-@media (min-width: 1024px) {
-    header .container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    footer .social-links {
-        gap: 1.5rem;
-    }
-
-    footer .social-links a {
-        font-size: 1.2rem;
-        padding: 0.5rem 1rem;
-    }
-
-    .nav-menu {
-        display: flex;
-        gap: 1.5rem;  /* Consistent gap for larger screens */
-    }
-
-    .hero.contact-hero {
-        height: 60vh;
-    }
-
-    .contact-form {
-        padding: 2rem;
-        max-width: 600px;
-    }
-
-    .contact-details-section {
-        padding: 3rem 2rem;
-    }
-
-    .contact-details-section h2 {
-        font-size: 2rem;
-    }
-
-    .contact-details-section p {
-        font-size: 1.2rem;
-    }
-
-    .contact-info li {
         font-size: 1.1rem;
     }
 }
