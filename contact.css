@@ -1,0 +1,245 @@
+/* General Reset */
+body, h1, h2, h3, p, ul, li, a, input, textarea, button {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+/* Body Style */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: #ffffff;
+    line-height: 1.6;
+    margin: 0;
+    overflow-x: hidden; /* Prevent horizontal overflow */
+}
+
+/* Header */
+header {
+    background-color: #1f1f1f;
+    padding: 0.5rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+header .logo img {
+    height: 100%;
+    max-height: 80px;
+    width: auto;
+    display: block;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-menu a {
+    color: #ffffff;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    transition: background-color 0.3s;
+}
+
+.nav-menu a:hover, .nav-menu a.active {
+    background-color: #2a2a2a;
+}
+
+/* Hero Section */
+.hero.contact-hero {
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: url('../image/BackGroundImage_Contact_Center.jpg') no-repeat center center;
+    background-size: cover;
+    color: #ffffff;
+    padding: 2rem;
+}
+
+.hero-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+/* Contact Details Section */
+.contact-details-section {
+    background-color: #2a2a2a;
+    padding: 4rem 2rem;
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contact-details-section h2 {
+    font-size: 2rem;
+    color: #00bcd4;
+    margin-bottom: 1.5rem;
+}
+
+.contact-details-section p {
+    font-size: 1.2rem;
+    color: #ffffff;
+    margin-bottom: 2rem;
+}
+
+/* Contact Boxes Styling */
+.contact-boxes {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.contact-box {
+    background-color: #1f1f1f;
+    color: #ffffff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    max-width: 400px;
+    width: 100%;
+    text-align: left;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.contact-box h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #00bcd4;
+}
+
+.contact-box p {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.contact-box a {
+    display: inline-block;
+    font-size: 0.9rem;
+    color: #00bcd4;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.contact-box a:hover {
+    color: #019cae;
+}
+
+.contact-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 188, 212, 0.5);
+}
+
+/* Footer */
+footer {
+    background-color: #1f1f1f;
+    text-align: center;
+    padding: 2rem 0;
+}
+
+footer p {
+    margin-bottom: 1rem;
+}
+
+/* Media Queries for Surface Pro 7 (912 x 1368) */
+@media (max-width: 912px) {
+    .hero.contact-hero {
+        height: 50vh;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .contact-boxes {
+        flex-wrap: wrap;
+    }
+
+    .contact-box {
+        max-width: calc(50% - 2rem);
+    }
+}
+
+/* Mobile and small devices (up to 768px) */
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nav-menu {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero.contact-hero {
+        height: auto;
+        padding: 2rem 1rem;
+    }
+
+    .hero-content h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .contact-boxes {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-box {
+        max-width: 100%;
+    }
+}
+
+/* Tablets and medium devices (768px to 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .contact-boxes {
+        flex-wrap: wrap;
+    }
+
+    .contact-box {
+        max-width: calc(50% - 2rem);
+    }
+}
+
+/* Large screens (1024px and above) */
+@media (min-width: 1024px) {
+    .contact-boxes {
+        flex-wrap: nowrap;
+    }
+
+    .contact-box {
+        max-width: calc(33.333% - 2rem);
+    }
+}
