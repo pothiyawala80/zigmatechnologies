@@ -1,5 +1,5 @@
 /* General Reset */
-body, h1, h2, h3, p, ul, li, a {
+body, h1, h2, h3, p, ul, li, a, button {
     margin: 0;
     padding: 0;
     text-decoration: none;
@@ -13,6 +13,8 @@ body {
     background-color: #121212;
     color: #ffffff;
     line-height: 1.6;
+    margin: 0;
+    overflow-x: hidden; /* Prevent horizontal overflow */
 }
 
 /* Header */
@@ -28,8 +30,9 @@ header .container {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 100%;
-    height: 100%; /* Ensure it fills the header height */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
 }
 
 header .logo img {
@@ -198,37 +201,50 @@ footer p {
     transform: scale(1.1);
 }
 
-/* Responsive Adjustments */
-@media (max-width: 1024px) {
-    header {
-        height: 70px; /* Reduce header height for tablets */
+/* Media Queries for Surface Pro 7 (912 x 1368) */
+@media (max-width: 912px) {
+    header .logo img {
+        max-height: 70px;
     }
 
-    header .logo img {
-        height: 100%; /* Ensure it scales proportionally */
+    .hero {
+        height: 50vh;
     }
 
     .hero-content h1 {
         font-size: 2rem;
     }
 
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .expertise-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+
     .expertise-item {
-        flex: 1 1 100%;
-        max-width: 100%;
+        max-width: calc(50% - 2rem);
     }
 }
 
+/* Mobile and small devices (up to 768px) */
 @media (max-width: 768px) {
-    header {
-        height: 60px; /* Further reduce header height for smaller screens */
+    header .container {
+        flex-direction: column;
+        text-align: center;
     }
 
-    header .logo img {
-        height: 100%;
+    .nav-menu {
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
     .hero {
-        height: 50vh;
+        height: auto;
+        padding: 2rem 1rem;
     }
 
     .hero-content h1 {
@@ -238,27 +254,83 @@ footer p {
     .hero-content p {
         font-size: 1rem;
     }
-}
 
-@media (max-width: 480px) {
-    header {
-        height: 50px; /* Compact header for small devices */
+    .expertise-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
     }
 
-    header .logo img {
-        height: 100%;
-    }
-
-    .hero {
-        height: 40vh;
-    }
-
-    .hero-content h1 {
-        font-size: 1.6rem;
+    .expertise-item {
+        max-width: 100%;
     }
 
     .contact-btn {
-        width: 100%;
-        padding: 1rem;
+        font-size: 0.9rem;
+        padding: 0.7rem 1.8rem;
+    }
+
+    footer .social-links {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        justify-content: center;
+    }
+
+    footer .social-links a {
+        font-size: 1rem;
+        padding: 0.4rem 0.8rem;
+    }
+}
+
+/* Tablets and medium devices (768px to 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .expertise-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+
+    .expertise-item {
+        max-width: 100%;
+    }
+
+    footer .social-links {
+        gap: 1rem;
+    }
+
+    footer .social-links a {
+        font-size: 1.1rem;
+        padding: 0.5rem 1rem;
+    }
+
+    .contact-btn {
+        font-size: 1rem;
+        padding: 0.8rem 2rem;
+    }
+}
+
+/* Large screens (1024px and above) */
+@media (min-width: 1024px) {
+    .expertise-grid {
+        display: flex;
+        gap: 2rem;
+    }
+
+    .expertise-item {
+        max-width: calc(33.333% - 2rem);
+    }
+
+    footer .social-links {
+        gap: 1.5rem;
+    }
+
+    footer .social-links a {
+        font-size: 1.2rem;
+        padding: 0.5rem 1rem;
+    }
+
+    .contact-btn {
+        font-size: 1.1rem;
+        padding: 0.9rem 2.5rem;
     }
 }

@@ -14,6 +14,7 @@ body {
     color: #ffffff;
     line-height: 1.6;
     margin: 0;
+    overflow-x: hidden; /* Prevent horizontal overflow */
 }
 
 /* Header */
@@ -29,6 +30,9 @@ header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
 }
 
 header .logo img {
@@ -37,6 +41,7 @@ header .logo img {
     width: auto;
     display: block;
 }
+
 header .logo h1 {
     font-size: 2.5rem;
     color: #ffffff;
@@ -76,8 +81,9 @@ header .logo h1 {
     justify-content: center;
     text-align: center;
     background: url('../image/BackGroundImage_Career_Center.jpg') no-repeat center center;
-    background-size: 100%; /* Zoom effect */
+    background-size: cover; /* Ensure the background covers the entire section */
     color: #ffffff;
+    padding: 2rem;
 }
 
 .hero-content h1 {
@@ -96,6 +102,8 @@ header .logo h1 {
 .positions {
     padding: 4rem 2rem;
     text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .positions h2 {
@@ -120,6 +128,7 @@ header .logo h1 {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     text-align: center;
     transition: transform 0.3s, box-shadow 0.3s;
+    overflow: hidden; /* Prevent content overflow */
 }
 
 .position-item:hover {
@@ -159,6 +168,8 @@ header .logo h1 {
     padding: 4rem 2rem;
     background-color: #1f1f1f;
     text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .life-at-zigma h2 {
@@ -182,6 +193,7 @@ header .logo h1 {
     text-align: center;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    overflow: hidden; /* Prevent content overflow */
 }
 
 .life-item h3 {
@@ -226,6 +238,41 @@ footer .social-links a:hover {
     background-color: #00bcd4;
     color: #121212;
     transform: scale(1.1) rotate(-3deg);
+}
+
+/* Media Queries for Surface Pro 7 (912 x 1368) */
+@media (max-width: 912px) {
+    header .logo h1 {
+        font-size: 2rem;
+    }
+
+    .hero.career-hero {
+        height: 50vh;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .positions-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .position-item {
+        max-width: calc(50% - 2rem);
+    }
+
+    .life-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .life-item {
+        max-width: calc(50% - 2rem);
+    }
 }
 
 /* Mobile and small devices (up to 768px) */
