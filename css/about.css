@@ -42,11 +42,22 @@ header .logo img {
 	display: block;
 }
 
+header .logo h1 {
+    font-size: 2.5rem;
+    color: #ffffff;
+    font-weight: bold;
+    animation: fadeInBounce 2s ease-out forwards;
+}
+
+@keyframes fadeInBounce {
+    0% { opacity: 0; transform: translateY(-50px); }
+    60% { opacity: 1; transform: translateY(10px); }
+    80% { transform: translateY(-5px); }
+    100% { transform: translateY(0); }
+}
 .nav-menu {
     display: flex;
-    align-items: center; /* Vertically aligns menu items */
     gap: 1rem;
-    margin: 0; /* Removes any default margins */
 }
 
 .nav-menu a {
@@ -54,9 +65,7 @@ header .logo img {
     padding: 0.5rem 1rem;
     border-radius: 5px;
     font-size: 0.9rem;
-    text-align: center; /* Ensures text inside the links is centered */
     transition: background-color 0.3s;
-    display: block; /* Makes each menu item a block-level element for consistent spacing */
 }
 
 .nav-menu a:hover,
@@ -74,6 +83,7 @@ header .logo img {
     background: url('../image/BackGroundImage_Aboutus_Center.jpg') no-repeat center center;
     background-size: cover;
     color: #ffffff;
+    padding: 2rem;
 }
 
 .hero-content h1 {
@@ -92,11 +102,12 @@ header .logo img {
     padding: 4rem 2rem;
     background-color: #1a1a1a;
     text-align: center;
+    
 }
 
 .about-overview h2 {
-    font-size: 2.2rem;
-    margin-bottom: 1.5rem;
+    font-size: 2rem;
+    margin-bottom: 2rem;
     color: #00bcd4;
     text-transform: uppercase;
 }
@@ -145,7 +156,7 @@ header .logo img {
 }
 
 .team h2 {
-    font-size: 2.2rem;
+    font-size: 1.8rem;
     margin-bottom: 1.5rem;
     color: #00bcd4;
 }
@@ -232,7 +243,7 @@ footer .social-links {
 
 
 /* Media Queries for Surface Pro 7 (912 x 1368) */
-@media (max-width: 912px) {
+/*@media (max-width: 912px) {
     header .logo img {
         max-height: 70px;
     }
@@ -268,7 +279,7 @@ footer .social-links {
     .mission-vision .mv-item {
         max-width: calc(50% - 2rem);
     }
-}
+} */
 
 /* Mobile and small devices (up to 768px) */
 @media (max-width: 768px) {
@@ -329,6 +340,14 @@ footer .social-links {
 
 /* Tablets and medium devices (768px to 1024px) */
 @media (min-width: 768px) and (max-width: 1024px) {
+    .nav-menu {
+        gap: 0.5rem;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    
     .team-grid {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -362,8 +381,8 @@ footer .social-links {
 /* Large screens (1024px and above) */
 @media (min-width: 1024px) {
     .team-grid {
-        display: flex;
-        gap: 2rem;
+	grid-template-columns: repeat(3, 1fr);
+
     }
 
     .team-member {

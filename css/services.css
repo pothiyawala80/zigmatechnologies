@@ -42,6 +42,19 @@ header .logo img {
     display: block;
 }
 
+header .logo h1 {
+    font-size: 2.5rem;
+    color: #ffffff;
+    font-weight: bold;
+    animation: fadeInBounce 2s ease-out forwards;
+}
+
+@keyframes fadeInBounce {
+    0% { opacity: 0; transform: translateY(-50px); }
+    60% { opacity: 1; transform: translateY(10px); }
+    80% { transform: translateY(-5px); }
+    100% { transform: translateY(0); }
+}
 /* Navigation Menu */
 .nav-menu {
     display: flex;
@@ -201,18 +214,56 @@ footer p {
 }
 
 /* Responsive Adjustments */
-@media (max-width: 912px) {
+/* @media (max-width: 912px) {
+    header .logo img {
+        max-height: 70px;
+    }
+
+    .hero {
+        height: 50vh;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
     .expertise-grid {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
     }
 
     .expertise-item {
         max-width: calc(50% - 2rem);
     }
-}
+} */
 
 @media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nav-menu {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero {
+        height: auto;
+        padding: 2rem 1rem;
+    }
+
+    .hero-content h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
     .expertise-grid {
         display: grid;
         grid-template-columns: 1fr;
@@ -225,6 +276,17 @@ footer p {
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
+    .nav-menu {
+        gap: 0.5rem;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-content p {
+        font-size: 1.1rem;
+    }
     .expertise-grid {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -238,6 +300,10 @@ footer p {
 
 @media (min-width: 1024px) {
     .expertise-grid {
-        grid-template-columns: repeat(3, 1fr);
+        display: flex;
+        gap: 2rem;
+    }
+    .expertise-item {
+        max-width: calc(33.333% - 2rem);
     }
 }
