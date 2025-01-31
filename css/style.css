@@ -26,6 +26,7 @@ header {
     z-index: 1000;
 }
 
+
 header .container {
     display: flex;
     align-items: center;
@@ -35,11 +36,13 @@ header .container {
     padding: 0 1rem;
 }
 
+
 header .logo img {
     height: 100%; /* Fit the container height */
     max-height: 80px; /* Prevent the image from exceeding the header height */
     width: auto; /* Maintain the aspect ratio */
     display: block;
+
 }
 
 /* Navigation Menu */
@@ -52,7 +55,7 @@ header .logo img {
     color: #ffffff;
     padding: 0.5rem 1rem;
     border-radius: 5px;
-	font-size: 1.1rem;
+	font-size: 1.05rem;
     transition: background-color 0.3s;
 }
 
