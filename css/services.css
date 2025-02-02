@@ -179,6 +179,10 @@ header .logo h1 {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
+.process-step h3{
+    color: #00bcd4;
+}
+
 /* Footer Section */
 footer {
     background-color: #1f1f1f;
