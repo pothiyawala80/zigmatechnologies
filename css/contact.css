@@ -211,13 +211,22 @@ footer p {
     }
 
     .contact-boxes {
-        flex-direction: column;
+        /*flex-direction: column;*/
         align-items: center;
     }
 
     .contact-box {
-        max-width: 100%;
+        height: auto;
+        padding: 4rem 7rem;
     }
+	
+	.contact-box a {
+    font-size: 0.80rem;
+	}
+	
+	header .logo img {
+    max-height: 75px;
+	}
 }
 
 /* Tablets and medium devices (768px to 1024px) */

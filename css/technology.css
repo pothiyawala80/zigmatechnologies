@@ -274,6 +274,10 @@ footer .social-links a:hover {
         flex: 1 1 calc(50% - 1rem);
         max-width: calc(50% - 1rem);
     }
+	
+	header .logo img {
+    max-height: 75px;
+	}
 }
 
 /* Tablets and medium devices (768px to 1024px) */

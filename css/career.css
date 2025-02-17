@@ -345,6 +345,10 @@ footer .social-links a:hover {
     .life-item p {
         font-size: 0.9rem;
     }
+	
+	header .logo img {
+    max-height: 75px;
+	}
 }
 
 /* Tablets and medium devices (768px to 1024px) */
