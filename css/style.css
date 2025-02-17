@@ -31,7 +31,7 @@ header .container {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    max-width: 1200px;
+    /* max-width: 1200px; */
     margin: 0 auto;
     padding: 0 0rem;
 }
@@ -39,7 +39,7 @@ header .container {
 
 header .logo img {
     height: 100%; /* Fit the container height */
-    max-height: 80px; /* Prevent the image from exceeding the header height */
+    max-height: 85px; /* Prevent the image from exceeding the header height */
     width: auto; /* Maintain the aspect ratio */
     display: block;
 
