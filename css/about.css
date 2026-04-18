@@ -19,31 +19,50 @@ body {
 
 .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
 
-/* Header */
+/* --- High-Level Pill Navigation --- */
 header {
-    background: rgba(5, 7, 10, 0.85);
-    backdrop-filter: blur(16px);
+    background: rgba(5, 7, 10, 0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     border-bottom: 1px solid var(--border-glass);
-    padding: 1rem 0;
+    padding: 0.8rem 0;
     position: sticky; top: 0; z-index: 1000;
 }
 
 .nav-box { display: flex; align-items: center; justify-content: space-between; }
 header .logo img { height: 48px; }
 
-.nav-menu { display: flex; gap: 0.5rem; }
-.nav-menu a {
-    color: var(--text-dim); font-size: 0.85rem; font-weight: 500;
-    padding: 0.6rem 1rem; border-radius: 8px; transition: 0.3s;
-    text-decoration: none;
+.main-nav {
+    display: flex; gap: 0.25rem; padding: 0.4rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 100px;
 }
-.nav-menu a:hover, .nav-menu a.active { color: var(--cyan); background: rgba(0, 188, 212, 0.05); }
-.nav-cta { border: 1px solid var(--cyan) !important; color: var(--cyan) !important; }
 
-/* About Hero */
+.nav-link {
+    color: var(--text-dim); font-size: 0.85rem; font-weight: 600;
+    padding: 0.6rem 1.1rem; border-radius: 100px;
+    transition: 0.3s ease; position: relative; text-decoration: none;
+}
+
+.nav-link:hover { color: #fff; background: rgba(255, 255, 255, 0.07); }
+.nav-link.active { color: #fff; background: rgba(0, 188, 212, 0.1); }
+
+.nav-link.active::after {
+    content: ''; position: absolute; bottom: 4px; left: 30%; right: 30%;
+    height: 2px; background: var(--cyan); border-radius: 10px;
+    box-shadow: 0 0 10px var(--cyan);
+}
+
+.nav-cta {
+    background: linear-gradient(135deg, var(--cyan), #008ba3);
+    color: #000 !important; font-weight: 700; font-size: 0.85rem;
+    padding: 0.7rem 1.4rem; border-radius: 100px; text-decoration: none;
+}
+
+/* About Hero Section */
 .about-hero {
-    min-height: 50vh;
-    display: flex; align-items: center; justify-content: center;
+    padding: 40px 0 60px;
     position: relative; text-align: center;
     background: radial-gradient(circle at 50% 50%, rgba(0, 188, 212, 0.08) 0%, transparent 70%);
 }
@@ -58,38 +77,38 @@ header .logo img { height: 48px; }
 .gradient-text { background: linear-gradient(to right, #ffffff, #00bcd4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 .hero-content p { color: var(--text-dim); font-size: 1.1rem; max-width: 700px; margin: 0 auto; }
 
-/* Overview */
-.about-overview { padding: 6rem 0; }
+/* Overview Section */
+.about-overview { padding: 2rem 0; }
 .overview-card {
-    background: var(--card-surface); padding: 4rem; border-radius: 24px;
+    background: var(--card-surface); padding: 1rem; border-radius: 24px;
     border: 1px solid var(--border-glass); text-align: center;
 }
-.overview-card h2 { color: var(--cyan); font-size: 2rem; margin-bottom: 2rem; text-transform: uppercase; letter-spacing: 1px; }
-.overview-card p { font-size: 1.1rem; margin-bottom: 1.5rem; color: var(--text-dim); max-width: 900px; margin-left: auto; margin-right: auto; }
 
 /* Mission Vision Grid */
-.mission-vision { padding: 4rem 0; }
+.mission-vision { padding: 1rem 0; }
 .mv-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
 .mv-item {
-    background: var(--card-surface); padding: 3rem 2rem; border-radius: 20px;
+    background: var(--card-surface); padding: 1rem 2rem; border-radius: 20px;
     border: 1px solid var(--border-glass); transition: 0.3s;
 }
 .mv-item:hover { border-color: var(--cyan); transform: translateY(-5px); }
 .mv-icon { font-size: 2.5rem; margin-bottom: 1.5rem; }
 .mv-item h3 { font-size: 1.5rem; color: var(--cyan); margin-bottom: 1rem; }
-.values-list li { color: var(--text-dim); margin-bottom: 0.5rem; position: relative; list-style: none; }
-.values-list li::before { content: "•"; color: var(--cyan); margin-right: 10px; }
+
+/* Values List Formatting */
+.values-list { padding-top: 1rem; text-align: left; }
+.values-list li { color: var(--text-dim); margin-bottom: 0.5rem; position: relative; list-style: none; padding-left: 1.5rem; }
+.values-list li::before { content: "•"; color: var(--cyan); position: absolute; left: 0; }
 
 /* Team Section */
-.team { padding: 8rem 0; text-align: center; }
-.section-title { font-size: 2.5rem; margin-bottom: 4rem; }
+.team { padding: 2rem 0; text-align: center; }
+.section-title { font-size: 2.5rem; margin-bottom: 1rem; text-align: center;}
 .team-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 3rem; justify-content: center; max-width: 800px; margin: 0 auto; }
 
 .team-member {
-    background: var(--card-surface); padding: 2.5rem; border-radius: 24px;
+    background: var(--card-surface); padding: 1rem; border-radius: 24px;
     border: 1px solid var(--border-glass); transition: 0.3s;
 }
-.team-member:hover { transform: translateY(-10px); border-color: var(--cyan); }
 
 .img-container {
     width: 150px; height: 180px; margin: 0 auto 1.5rem;
@@ -97,16 +116,9 @@ header .logo img { height: 48px; }
 }
 .img-container img { width: 100%; height: 100%; object-fit: cover; }
 
-.team-member h3 { color: var(--cyan); font-size: 1.4rem; margin-bottom: 0.5rem; }
-.role { color: var(--text-dim); font-weight: 500; }
+footer { padding: 1rem 0; text-align: center; color: #444; border-top: 1px solid var(--border-glass); }
 
-/* Footer */
-footer { padding: 4rem 0; text-align: center; color: #444; border-top: 1px solid var(--border-glass); }
-
-/* Mobile */
 @media (max-width: 992px) {
-    .mv-grid { grid-template-columns: 1fr; }
-    .team-grid { grid-template-columns: 1fr; }
-    .hero-content h1 { font-size: 2.5rem; }
-    .overview-card { padding: 2.5rem 1.5rem; }
+    .main-nav { display: none; }
+    .mv-grid, .team-grid { grid-template-columns: 1fr; }
 }

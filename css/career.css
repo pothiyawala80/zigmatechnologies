@@ -7,7 +7,6 @@
     --border-glass: rgba(255, 255, 255, 0.08);
 }
 
-/* Base Reset */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
@@ -20,31 +19,51 @@ body {
 
 .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
 
-/* Header */
+/* --- Pill Navigation --- */
 header {
-    background: rgba(5, 7, 10, 0.85);
-    backdrop-filter: blur(16px);
+    background: rgba(5, 7, 10, 0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     border-bottom: 1px solid var(--border-glass);
-    padding: 1rem 0;
+    padding: 0.8rem 0;
     position: sticky; top: 0; z-index: 1000;
 }
 
 .nav-box { display: flex; align-items: center; justify-content: space-between; }
 header .logo img { height: 48px; }
 
-.nav-menu { display: flex; gap: 0.5rem; }
-.nav-menu a {
-    color: var(--text-dim); font-size: 0.85rem; font-weight: 500;
-    padding: 0.6rem 1rem; border-radius: 8px; transition: 0.3s;
-    text-decoration: none;
+.main-nav {
+    display: flex; gap: 0.25rem; padding: 0.4rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 100px;
 }
-.nav-menu a:hover, .nav-menu a.active { color: var(--cyan); background: rgba(0, 188, 212, 0.05); }
-.nav-cta { border: 1px solid var(--cyan) !important; color: var(--cyan) !important; margin-left: 0.5rem; }
 
-/* Career Hero */
+.nav-link {
+    color: var(--text-dim); font-size: 0.85rem; font-weight: 600;
+    padding: 0.6rem 1.1rem; border-radius: 100px;
+    transition: 0.3s ease; position: relative; text-decoration: none;
+}
+
+.nav-link:hover { color: #fff; background: rgba(255, 255, 255, 0.07); }
+.nav-link.active { color: #fff; background: rgba(0, 188, 212, 0.1); }
+
+.nav-link.active::after {
+    content: ''; position: absolute; bottom: 4px; left: 30%; right: 30%;
+    height: 2px; background: var(--cyan); border-radius: 10px;
+    box-shadow: 0 0 10px var(--cyan);
+}
+
+.nav-cta {
+    background: linear-gradient(135deg, var(--cyan), #008ba3);
+    color: #000 !important; font-weight: 700; font-size: 0.85rem;
+    padding: 0.7rem 1.4rem; border-radius: 100px; text-decoration: none;
+    transition: 0.3s;
+}
+
+/* Career Hero Section - Spacing Fixed */
 .career-hero {
-    min-height: 50vh;
-    display: flex; align-items: center; justify-content: center;
+    padding: 40px 0 20px;
     position: relative; text-align: center;
     background: radial-gradient(circle at 50% 50%, rgba(0, 188, 212, 0.08) 0%, transparent 70%);
 }
@@ -55,22 +74,17 @@ header .logo img { height: 48px; }
     font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px;
 }
 
-.hero-content h1 { font-size: 3.5rem; font-weight: 800; line-height: 1.2; margin: 1.5rem 0; }
+.hero-content h1 { font-size: 3.8rem; font-weight: 800; line-height: 1.1; margin: 1.5rem 0; }
 .gradient-text { background: linear-gradient(to right, #ffffff, #00bcd4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 .hero-content p { color: var(--text-dim); font-size: 1.1rem; max-width: 700px; margin: 0 auto; }
 
-/* Open Positions */
-.positions { padding: 6rem 0; }
-.section-title { font-size: 2.5rem; margin-bottom: 4rem; text-align: center; }
-
-.positions-grid { 
-    display: grid; 
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
-    gap: 2rem; 
-}
+/* Restored Apply Now Button Boxes */
+.positions { padding: 2rem 0; }
+.section-title { font-size: 2.5rem; margin-bottom: 1rem; text-align: center; }
+.positions-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
 
 .position-item {
-    background: var(--card-surface); padding: 2.5rem; border-radius: 24px;
+    background: var(--card-surface); padding: 1rem; border-radius: 24px;
     border: 1px solid var(--border-glass); transition: 0.4s;
     display: flex; flex-direction: column; align-items: flex-start;
 }
@@ -86,37 +100,31 @@ header .logo img { height: 48px; }
 .position-item p { color: var(--text-dim); font-size: 0.95rem; margin-bottom: 2rem; flex-grow: 1; }
 
 .apply-button {
+    display: block; width: 100%; text-align: center;
     background: transparent; color: var(--cyan); border: 1px solid var(--cyan);
     padding: 0.8rem 1.8rem; border-radius: 8px; font-weight: 600;
-    transition: 0.3s; text-decoration: none; width: 100%; text-align: center;
+    transition: 0.3s; text-decoration: none;
 }
 .apply-button:hover { background: var(--cyan); color: #000; }
 
-/* Life at Zigma */
-.life-at-zigma { padding: 8rem 0; background: rgba(255, 255, 255, 0.02); }
-.section-subtitle { text-align: center; color: var(--text-dim); max-width: 800px; margin: -2rem auto 4rem; }
+/* Restored Life at Zigma Formatting */
+.life-at-zigma { padding: 1rem 0; background: rgba(255, 255, 255, 0.02); }
+.section-subtitle { text-align: center; color: var(--text-dim); max-width: 800px; margin: -1rem auto 1rem; }
 
-.life-grid { 
-    display: grid; 
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-    gap: 2rem; 
-}
-
+.life-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
 .life-item {
-    background: var(--card-surface); padding: 3rem 2rem; border-radius: 20px;
+    background: var(--card-surface); padding: 1rem 2rem; border-radius: 20px;
     border: 1px solid var(--border-glass); text-align: center; transition: 0.3s;
 }
 .life-item:hover { border-color: var(--cyan); transform: scale(1.02); }
 .life-icon { font-size: 2.5rem; margin-bottom: 1.5rem; }
-.life-item h3 { font-size: 1.5rem; color: var(--cyan); margin-bottom: 1rem; }
+.life-item h3 { font-size: 1.3rem; color: var(--cyan); margin-bottom: 1rem; }
 .life-item p { color: var(--text-dim); font-size: 0.95rem; }
 
-/* Footer */
-footer { padding: 4rem 0; text-align: center; color: #444; border-top: 1px solid var(--border-glass); }
+footer { padding: 1rem 0; text-align: center; color: #444; border-top: 1px solid var(--border-glass); }
 
-/* Mobile Optimization */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
+    .main-nav { display: none; }
+    .life-grid { grid-template-columns: 1fr; }
     .hero-content h1 { font-size: 2.5rem; }
-    .nav-menu { display: none; }
-    .positions-grid, .life-grid { grid-template-columns: 1fr; }
 }
