@@ -30,7 +30,11 @@ header {
 }
 
 .nav-box { display: flex; align-items: center; justify-content: space-between; }
-header .logo img { height: 48px; }
+header .logo img { height: 60px; }
+
+/* Mobile Toggle Layout */
+.menu-toggle { display: none; flex-direction: column; gap: 6px; background: none; border: none; }
+.bar { width: 25px; height: 2px; background-color: #fff; border-radius: 2px; }
 
 .main-nav {
     display: flex;
@@ -67,7 +71,7 @@ header .logo img { height: 48px; }
 /* --- Hero Section - FIXED OVERLAP --- */
 .hero {
     position: relative;
-    padding: 40px 0 20px; /* Specific padding to prevent overlap */
+    padding: 0px 0 20px; /* Specific padding to prevent overlap */
     text-align: center;
     overflow: hidden;
     background: radial-gradient(circle at 50% 50%, rgba(0, 188, 212, 0.08) 0%, transparent 70%);
@@ -78,7 +82,7 @@ header .logo img { height: 48px; }
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 1rem; /* Consistent gap between all elements */
+    gap: 0rem; /* Consistent gap between all elements */
 }
 
 .badge {
@@ -135,7 +139,7 @@ header .logo img { height: 48px; }
 }
 
 /* --- Expertise Section --- */
-.expertise { padding: 2rem 0; }
+.expertise { padding: 0rem 0; }
 .section-title { font-size: 2.5rem; margin-bottom: 1rem; text-align: center; }
 .expertise-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
 .expertise-item {
@@ -146,7 +150,7 @@ header .logo img { height: 48px; }
 .item-number { font-size: 3rem; font-weight: 900; color: rgba(255, 255, 255, 0.03); position: absolute; top: 1rem; right: 1.5rem; }
 
 /* --- Transform Section --- */
-.transform { padding-bottom: 2rem; }
+.transform { padding: 1rem; }
 .transform-card {
     background: linear-gradient(135deg, #11141b 0%, #061012 100%);
     border: 1px solid var(--border-glass); padding: 1rem 1rem; border-radius: 32px; text-align: center;

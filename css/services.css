@@ -17,7 +17,7 @@ body {
     overflow-x: hidden;
 }
 
-.container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
 
 /* --- High-Level Pill Navigation --- */
 header {
@@ -30,7 +30,7 @@ header {
 }
 
 .nav-box { display: flex; align-items: center; justify-content: space-between; }
-header .logo img { height: 48px; }
+header .logo img { height: 60px; }
 
 .main-nav {
     display: flex; gap: 0.25rem; padding: 0.4rem;
@@ -67,7 +67,7 @@ header .logo img { height: 48px; }
 
 /* Services Hero Section - Balanced Spacing */
 .services-hero {
-    padding: 40px 0 60px;
+    padding: 0px 0 20px;
     position: relative; text-align: center;
     background: radial-gradient(circle at 50% 50%, rgba(0, 188, 212, 0.08) 0%, transparent 70%);
 }
@@ -93,7 +93,7 @@ header .logo img { height: 48px; }
 .expertise-item:hover { transform: translateY(-10px); border-color: var(--cyan); background: rgba(255,255,255,0.02); }
 
 /* Process Section */
-.process { padding: 2rem 0; background: rgba(0, 188, 212, 0.02); }
+.process { padding: 1rem 0; background: rgba(0, 188, 212, 0.02); }
 .process-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem; margin-top: 0rem; }
 .process-step {
     background: var(--card-surface); padding: 1rem 2rem; border-radius: 20px;

@@ -31,7 +31,7 @@ header {
 }
 
 .nav-box { display: flex; align-items: center; justify-content: space-between; }
-header .logo img { height: 48px; }
+header .logo img { height: 60px; }
 
 .main-nav {
     display: flex;
@@ -66,13 +66,24 @@ header .logo img { height: 48px; }
     box-shadow: 0 4px 15px rgba(0, 188, 212, 0.2); transition: 0.3s;
 }
 
+.nav-cta.active {
+    background: linear-gradient(135deg, #00f2ff, #00c6ff);
+    color: #000 !important;
+    box-shadow: 0 8px 25px rgba(0, 229, 255, 0.7);
+    transform: scale(1.06);
+    position: relative;
+}
+
+
+
+
 /* Mobile Toggle Layout */
 .menu-toggle { display: none; flex-direction: column; gap: 6px; background: none; border: none; }
 .bar { width: 25px; height: 2px; background-color: #fff; border-radius: 2px; }
 
 /* Contact Hero Section - Spacing Fixed */
 .contact-hero {
-    padding: 40px 0 20px;
+    padding: 20px 0 20px;
     position: relative; text-align: center;
     background: radial-gradient(circle at 50% 50%, rgba(0, 188, 212, 0.08) 0%, transparent 70%);
 }
@@ -88,7 +99,7 @@ header .logo img { height: 48px; }
 .hero-content p { color: var(--text-dim); font-size: 1.2rem; }
 
 /* --- Interactive Contact Info Styles --- */
-.contact-details-section { padding: 2rem 0; }
+.contact-details-section { padding: 1rem 0; }
 .section-title { font-size: 2.5rem; margin-bottom: 0rem; text-align: center; }
 .section-subtitle { text-align: center; color: var(--text-dim); margin-bottom: 1rem; font-size: 1.1rem; }
 
